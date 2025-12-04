@@ -31,6 +31,7 @@ int	printf(const char *format, ...)
 		{
 			tmp++;
 			ft_format(tmp, arg, format);
+			break;
 		}
 	}
 	return (*tmp);

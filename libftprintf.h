@@ -22,8 +22,8 @@
 
 size_t	ft_strlen(const char *s);
 int		ft_putchar(int c);
-void	ft_putstr(const char *s);
-void	ft_putnbr(int n);
+void	ft_putpointer(const char *s);
+void	ft_putnbr(int n, int base);
 void	ft_format(char *tmp, va_list arg, char *format);
 int		printf(const char *format, ...);
 

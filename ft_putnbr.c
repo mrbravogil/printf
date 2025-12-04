@@ -12,7 +12,7 @@
 
 #include "libftprintf.h"
 
-void	ft_putnbr(int n)
+void	ft_putnbr(int n, int base)
 {
 	long	i;
 
@@ -21,8 +21,8 @@ void	ft_putnbr(int n)
 		ft_putchar('-');
 	if (i >= 10)
 	{
-		ft_putnbr(i / 10);
-		ft_putnbr(i % 10);
+		ft_putnbr(i / base, base);
+		ft_putnbr(i % base, base);
 	}
 	else
 	{
