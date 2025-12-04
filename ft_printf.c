@@ -12,13 +12,34 @@
 
 #include "libftprintf.h"
 
-int printf(const char *restrict format, ...)
+int	printf(const char *format, ...)
 {
-
+	char				*tmp;
+	unsigned int		i;
+	va_list				arg;
+	
+	va_start(arg, format);
+	tmp = (char *)format;
+	while (*tmp)
+	{
+		while (*tmp != '\0' && *tmp != '%')
+		{
+			ft_putchar(*tmp);
+			tmp++;
+		}
+		if (*tmp == '%')
+		{
+			tmp++;
+			ft_format(tmp, arg, format);
+		}
+	}
+	return (*tmp);
+	va_end (arg);
 }
 
-int main()
+int	main()
 {
-    printf("");
-    return (0);
+	printf("Hol	a\nho lita");
+	return (0);
+
 }

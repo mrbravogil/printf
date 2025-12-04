@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabravo- <mabravo-@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/02 13:40:30 by mabravo-          #+#    #+#             */
-/*   Updated: 2025/12/02 13:40:34 by mabravo-         ###   ########.fr       */
+/*   Created: 2025/12/04 10:31:40 by mabravo-          #+#    #+#             */
+/*   Updated: 2025/12/04 10:31:41 by mabravo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "libftprintf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stddef.h>
-# include <stdio.h>
-# include <string.h>
-# include <stdarg.h>
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
 
-size_t	ft_strlen(const char *s);
-int		ft_putchar(int c);
-void	ft_putstr(const char *s);
-void	ft_putnbr(int n);
-void	ft_format(char *tmp, va_list arg, char *format);
-int		printf(const char *format, ...);
-
-
-
-#endif
-
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}

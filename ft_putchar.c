@@ -12,11 +12,12 @@
 
 #include "libftprintf.h"
 
-int    ft_putchar(int c)
+int	ft_putchar(int c)
 {
-    unsigned char   l;
+	unsigned char	l;
 
-    l = (unsigned char)c;
-    write (1, &l, 1);
+	l = (unsigned char)c;
+	write (1, &l, 1);
+	return (l);
 }
 

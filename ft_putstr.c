@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabravo- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mabravo- <mabravo-@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 14:54:21 by mabravo-          #+#    #+#             */
 /*   Updated: 2025/12/02 14:54:23 by mabravo-         ###   ########.fr       */
@@ -12,14 +12,14 @@
 
 #include "libftprintf.h"
 
-void ft_putstr(const char *s)
+void	ft_putstr(const char *s)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (s[i])
-    {
-        ft_putchar(&s[i]);
-        i++;
-    }
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar(&s[i]);
+		i++;
+	}
 }
