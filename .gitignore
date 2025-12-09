@@ -1,0 +1,2 @@
+ejecutar funciones
+gcc ft_printf.c -L. -lftprintf -o mi_programa

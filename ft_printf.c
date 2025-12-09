@@ -39,9 +39,12 @@ int	ft_printf(const char *format, ...)
 	return (count);
 }
 
-/*int	main()
+/*int	main(void)
 {
+	int	n = 42;
+	void *ptr = &n;
+	printf("Esta es la dirección de mi puntero: %p\n", ptr);
+	ft_printf("Esta es la dirección de mi puntero: %p\n", ptr);
 	printf("Hol	a\nho lita");
 	return (0);
-
 }*/
