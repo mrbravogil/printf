@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putunbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabravo- <mabravo-@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/02 14:54:21 by mabravo-          #+#    #+#             */
-/*   Updated: 2025/12/02 14:54:23 by mabravo-         ###   ########.fr       */
+/*   Created: 2025/12/09 14:45:59 by mabravo-          #+#    #+#             */
+/*   Updated: 2025/12/09 14:46:01 by mabravo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
+int	ft_putunbr(int n)
 {
-	int	i;
+	unsigned int	i;
+	int				c;
 
-	i = 0;
-	if (!s)
-		return (ft_putstr("(null)"));
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
-	return (i);
+	i = n;
+	c = 0;
+	if (i >= 10)
+		c += ft_putunbr(i / 10);
+	c += ft_putchar((i % 10) + '0');
+	return (c);
 }

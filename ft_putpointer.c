@@ -12,61 +12,30 @@
 
 #include "ft_printf.h"
 
-void	ft_swap(char *b, int i)
+int	ft_puthexlong(unsigned long n)
 {
-	char	tmp;
-	int		j;
-	int		e;
+	char	c;
+	int		char_c;
+	char	*hex;
 
-	j = 0;
-	e = i - 1;
-	while (i > 0)
-	{
-		tmp = b[j];
-		b[j] = b[i];
-		b[i] = tmp;
-		j++;
-		e--;
-	}
-	b[i] = '\0';
-}
-
-int	ft_hexcal(unsigned long cs, char *b)
-{
-	unsigned long	r;
-	char			hex;
-	int				i;
-
-	i = 0;
-	while (cs > 0)
-	{
-		r = cs % 16;
-		if (r < 10)
-			hex = r + '0';
-		else
-			hex = (r - 10) + 'a';
-		b[i] = hex;
-		i++;
-		cs /= 16;
-	}
-	return (i);
+	char_c = 0;
+	hex = "0123456789abcdef";
+	if (n >= 16)
+		char_c += (ft_puthexlong(n / 16));
+	c = hex[n % 16];
+	char_c += ft_putchar(c);
+	return (char_c);
 }
 
 int	ft_putpointer(void *s)
 {
 	unsigned long	cs;
-	char			b[17];
-	int				i;
+	int				count;
 
+	if (!s)
+		return (ft_putstr("(nil)"));
 	cs = (unsigned long )s;
-	if (!cs)
-	{
-		ft_putstr("0x0");
-		return (3);
-	}
-	i = ft_hexcal(cs, b);
-	ft_swap(b, i);
-	ft_putstr("0x");
-	ft_putstr(b);
-	return (i);
+	count = ft_putstr("0x");
+	count += ft_puthexlong(cs);
+	return (count);
 }

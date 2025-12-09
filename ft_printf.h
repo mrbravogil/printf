@@ -23,6 +23,7 @@
 int	ft_putchar(int c);
 int	ft_putpointer(void *s);
 int	ft_putnbr(int n);
+int	ft_putunbr(int n);
 int	ft_format(char tmp, va_list arg);
 int	ft_printf(const char *format, ...);
 int	ft_putstr(char *s);

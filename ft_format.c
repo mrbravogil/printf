@@ -17,7 +17,7 @@ int	ft_format(char tmp, va_list arg)
 	if (tmp == 'd' || tmp == 'i')
 		return (ft_putnbr(va_arg(arg, int)));
 	else if (tmp == 'u')
-		return (ft_putnbr(va_arg(arg, unsigned int)));
+		return (ft_putunbr(va_arg(arg, unsigned int)));
 	else if (tmp == 'x')
 		return (ft_puthex(va_arg(arg, int), 0));
 	else if (tmp == 'X')

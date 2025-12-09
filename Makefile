@@ -15,7 +15,7 @@ FLAGS = -Wall -Werror -Wextra -c
 
 RM = /bin/rm -f
 
-SRCS = ft_format.c ft_printf.c ft_putchar.c ft_putnbr.c ft_putpointer.c ft_putstr.c ft_puthex.c
+SRCS = ft_format.c ft_printf.c ft_putchar.c ft_putnbr.c ft_putpointer.c ft_putstr.c ft_puthex.c ft_putunbr.c
 
 OBJECTS = $(SRCS:.c=.o)
 
