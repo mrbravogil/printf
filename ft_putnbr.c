@@ -10,22 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-void	ft_putnbr(int n, int base)
+int	ft_putnbr(int n)
 {
-	long	i;
+	long int	i;
+	int			c;
 
 	i = n;
+	c = 0;
 	if (i < 0)
-		ft_putchar('-');
+	{
+		c += ft_putchar('-');
+		i = -i;
+	}
 	if (i >= 10)
-	{
-		ft_putnbr(i / base, base);
-		ft_putnbr(i % base, base);
-	}
-	else
-	{
-		ft_putchar(i + '0');
-	}
+		c += ft_putnbr(i / 10);
+	c += ft_putchar((i % 10) + '0');
+	return (c);
 }

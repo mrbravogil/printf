@@ -10,37 +10,38 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-int	printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	char				*tmp;
-	unsigned int		i;
-	va_list				arg;
-	
+	int		count;
+	int		i;
+	va_list	arg;
+
 	va_start(arg, format);
-	tmp = (char *)format;
-	while (*tmp)
+	i = 0;
+	count = 0;
+	while (format[i])
 	{
-		while (*tmp != '\0' && *tmp != '%')
+		if (format[i] == '%')
 		{
-			ft_putchar(*tmp);
-			tmp++;
+			i++;
+			count += ft_format(format[i], arg);
 		}
-		if (*tmp == '%')
+		else
 		{
-			tmp++;
-			ft_format(tmp, arg, format);
-			break;
+			ft_putchar(format[i]);
+			count++;
 		}
+		i++;
 	}
-	return (*tmp);
 	va_end (arg);
+	return (count);
 }
 
-int	main()
+/*int	main()
 {
 	printf("Hol	a\nho lita");
 	return (0);
 
-}
+}*/
